@@ -1,0 +1,88 @@
+@use '@carbon/react';
+
+#root{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.background-white {
+    background-color: whitesmoke;
+  }
+
+#main{
+  display: flex;
+  width: 100vw;
+}
+#slider{
+  display: flex;
+  flex-wrap: wrap;
+  width: 20vw;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+#tabla{
+  width: 100vw;
+  background-color: #f4f4f4;
+}
+
+#iconSlider{
+  position:fixed;
+  margin-top: 15vh;
+}
+#slider h1{
+  position:fixed;
+  bottom: 180px;
+}
+
+.botonDeSet {
+  flex: 1; /* Hace que los botones ocupen todo el ancho disponible */
+  height: 5rem;
+  min-width: 51%;
+  max-width: 100%; /* Asegura que los botones no excedan el ancho del contenedor */
+}
+
+#agregarButtonSlide{
+  margin-top: -5rem;
+}
+
+#notificacionesButtonSlide{
+  margin-top: calc(100vh - 5rem);
+  bottom: 0rem;
+}
+
+#modalVenta{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#ventaSlider{
+  width: 40%;
+  padding: 1rem;
+}
+
+#buttonVentaAgregar{
+  margin-top: 1rem;
+  max-width: 200vw;
+  width: 100%;
+}
+
+#ventaTicket{
+  width: 60%;
+}
+
+.errorIcon{
+  padding-inline-end: 0;
+}
+
+#notificacionesModal .cds--modal-container{
+  background-color: #858585;
+  display: flex;
+  justify-content: center;
+}
+
+.first-minute {
+  color: blue;
+}

@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Product {
+  id          Int    @id @default(autoincrement())
+  producto    String
+  descripcion String
+  precio      Float
+  tipo        String
+}
+
+model Service {
+  id     Int    @id @default(autoincrement())
+  nombre String
+  tiempo String
+  text   String
+  precio Float
+  tipo   String
+}
+
+model Receipt {
+  id        Int          @id @default(autoincrement())
+  fecha     DateTime     @default(now())
+  total     Float
+  pago      Float?
+  cambio    Float?
+  productos ReceiptRow[]
+  Corte     Corte?       @relation(fields: [corteId], references: [id])
+  corteId   Int?
+}
+
+model ReceiptRow {
+  id            Int      @id @default(autoincrement())
+  fecha         DateTime @default(now())
+  nombre        String
+  descripcion   String
+  detenido      Boolean? @default(false)
+  precio        Float
+  cantidad      Float
+  subtotal      Float
+  tiempoRentado Float
+  tiempoUsado Float?
+  tipo          String
+  Receipt       Receipt  @relation(fields: [receiptId], references: [id])
+  receiptId     Int
+}
+
+model Corte {
+  id            Int       @id @default(autoincrement())
+  fechaInicio   DateTime
+  fechaFinal    DateTime?
+  folioInicial  Int?
+  folioFinal    Int?
+  fondoInicio   Float
+  fondoFinal    Float?
+  efectivoTotal Float?
+  recibosTotal  Float?
+  estado        String    @default("abierto")
+  recibos       Receipt[]
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  password String
+}
