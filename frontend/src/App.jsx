@@ -204,7 +204,7 @@ function App() {
 						</HeaderGlobalBar>
 					</Header>
 
-					<TablaTemporizador setOpenProductModal={setOpenProductModal} />
+					<TablaTemporizador setOpenProductModal={setOpenProductModal}/> 
 
 					<Modal
 						open={openProductModal}
@@ -224,7 +224,7 @@ function App() {
 							{showPayment ? (
 								<div style={{ marginTop: "20px", marginBottom: "30px" }}>
 									<Grid>
-									<Column sm={2} md={2} lg={4}>
+										<Column sm={2} md={2} lg={4}>
 											<Button
 												onClick={() => setShowPayment(false)}
 												renderIcon={ArrowLeft}
@@ -237,14 +237,14 @@ function App() {
 										</Column>
 
 										<Column sm={2} md={3} lg={6}>
-											<h4 style={{paddingTop:"15px"}}>Pago</h4>
+											<h4 style={{ paddingTop: "15px" }}>Pago</h4>
 											<TextInput
 												labelText=""
 												size="xl"
 												value={pago}
 												onChange={handlePagoChange}
 											></TextInput>
-											<h4 style={{paddingTop:"15px"}}>Monto</h4>
+											<h4 style={{ paddingTop: "15px" }}>Monto</h4>
 											<TextInput
 												labelText=""
 												size="lg"
@@ -252,7 +252,7 @@ function App() {
 												value={formatPrecio(total * 100)}
 											></TextInput>
 
-											<h4 style={{paddingTop:"25px"}}>Cambio</h4>
+											<h4 style={{ paddingTop: "25px" }}>Cambio</h4>
 
 											<TextInput
 												labelText=""

@@ -44,7 +44,6 @@ const main = async () => {
   setInterval(updateSubtotals, 5 * 60 * 1000);
 };
 
-main();
 
 app.listen(3000);
 console.log("Server on port", 3000);

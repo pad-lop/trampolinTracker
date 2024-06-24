@@ -175,6 +175,7 @@ const TablaTemporizador = ({ setOpenProductModal }) => {
 								))}
 							</TableRow>
 						</TableHead>
+						{/*
 						<TableBody>
 							{rows.map((row) => (
 								<TableRow key={row.id} {...getRowProps({ row })}>
@@ -217,6 +218,7 @@ const TablaTemporizador = ({ setOpenProductModal }) => {
 								</TableRow>
 							))}
 						</TableBody>
+					*/}
 					</Table>
 				</TableContainer>
 			)}
